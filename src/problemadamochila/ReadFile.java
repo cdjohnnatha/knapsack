@@ -12,23 +12,23 @@ import java.nio.file.Paths;
  * @author luana
  */
 
-public class Leitura {
+public class ReadFile {
 
-    private final String endereco;
+    private final String address;
     private final Path caminho;
     private final Charset utf8;
     private final String token;
-    private int n, capacidade;
-    private int[] valor, peso;
+    private int n, capacity;
+    private int[] amount, weight;
 
-    public Leitura(String end, String token) {
-        this.endereco = end;
-        caminho = Paths.get(endereco);
+    public ReadFile(String end, String token) {
+        this.address = end;
+        caminho = Paths.get(address);
         utf8 = StandardCharsets.UTF_8;
         this.token = token;
     }
 
-    public Leitura(String end) {
+    public ReadFile(String end) {
         this(end, " ");
     }
 
@@ -40,12 +40,12 @@ public class Leitura {
                 String[] t = linha.split(token); // recuperando um linha
                 if (k == -1) {
                     n = Integer.parseInt(t[0]);
-                    capacidade = Integer.parseInt(t[1]);
-                    peso = new int[n];
-                    valor = new int[n];
+                    capacity = Integer.parseInt(t[1]);
+                    weight = new int[n];
+                    amount = new int[n];
                 } else {
-                    peso[k] = Integer.parseInt(t[0]);
-                    valor[k] = Integer.parseInt(t[1]);
+                    weight[k] = Integer.parseInt(t[0]);
+                    amount[k] = Integer.parseInt(t[1]);
                 }
                 k++;
             }
@@ -58,16 +58,16 @@ public class Leitura {
         return n;
     }
 
-    public int getCapacidade() {
-        return capacidade;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public int[] getValor() {
-        return valor;
+    public int[] getAmount() {
+        return amount;
     }
 
-    public int[] getPeso() {
-        return peso;
+    public int[] getWeight() {
+        return weight;
     }
 }
 

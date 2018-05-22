@@ -6,13 +6,13 @@ package problemadamochila;
  */
 
 
-public class Objeto {
+public class Item {
 
     private final String nome;
     private final int valor;
     private final int peso;
 
-    public Objeto(String n, int v, int p) {
+    public Item(String n, int v, int p) {
         this.nome = n;
         this.valor = v;
         this.peso = p;
